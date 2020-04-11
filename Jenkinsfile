@@ -6,7 +6,7 @@
         sh 'mvn clean package'
       }
       stage('deploy') {
-        withCredentials([azureServicePrincipal('azure_service_principal')]) {
+        withCredentials([azureServicePrincipal('myazure_service_principal')]) {
           // login to Azure
           sh '''
             az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
