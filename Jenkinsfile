@@ -13,8 +13,8 @@
             az account set -s $AZURE_SUBSCRIPTION_ID
           '''  
           // Set default resource group name and service name. Replace <resource group name> and <service name> with the right values
-          sh 'az configure --defaults group=learn-madhu'
-          sh 'az configure --defaults spring-cloud=learn-madhu-spring-cloud-service'
+          sh 'az configure --defaults group=yogi'
+          sh 'az configure --defaults spring-cloud=springcloudservice'
     	  // Deploy applications
           sh 'az spring-cloud app deploy -n gateway --jar-path ./gateway/target/gateway.jar'
           sh 'az spring-cloud app deploy -n account-service --jar-path ./account-service/target/account-service.jar'
